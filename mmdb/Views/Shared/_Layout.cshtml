@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html ng-app="mmdb">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/#/" class="navbar-brand" >mmdb</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/#/">Movies</a></li>
+                    <li><a href="/#/add">Add Movie</a></li>
+                    <li><a href="/#/stats">Movie Stats</a></li>
+                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Josh Sommer</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/scripts/angular.min.js")
+    @Scripts.Render("~/scripts/angular-route.min.js")
+    @Scripts.Render("~/scripts/angular-resource.min.js")
+    @Scripts.Render("~/app/app.js")
+    @Scripts.Render("~/app/routes.js")
+    @Scripts.Render("~/app/directives.js")
+    @Scripts.Render("~/app/factories.js")
+    @Scripts.Render("~/app/components/home/homeController.js")
+    @Scripts.Render("~/app/components/movieInfo/movieInfoController.js")
+    @Scripts.Render("~/app/components/addmovie/addmovieController.js")
+    @Scripts.Render("~/app/components/editmovie/editmovieController.js")
+    @Scripts.Render("~/app/components/stats/statsController.js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

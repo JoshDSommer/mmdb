@@ -1,0 +1,8 @@
+﻿movie-card{
+    border-radius:6px;
+    border:1px solid #808080;
+    box-shadow:#808080 10px 10px inset;
+}
+movie-card img{
+    width:150px;
+}

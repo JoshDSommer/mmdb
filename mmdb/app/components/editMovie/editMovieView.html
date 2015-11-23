@@ -1,0 +1,49 @@
+﻿<section ng-controller="EditMovieController as edit">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Edit {{edit.Movie.Title}}</h2>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-8">
+            <input type="hidden" ng-model="edit.Movie.MovieId" />
+            <movie-form ng-model="edit.Movie"></movie-form>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+            <h4>
+                Add Actors to {{edit.Movie.Title}}
+            </h4>
+
+            <label for="movie-actors">Actors</label>
+            <div class="input-group">
+                <input type="text" ng-model="actor" id="add-actor" /><button ng-click="edit.addActor(actor)">add actor</button>
+                <ul>
+                    <li ng-repeat="actor in edit.Movie.Actors">{{actor.Name}} - <span class="glyphicon glyphicon-trash" ng-click="edit.removeActor(actor.ActorId)" "aria-hidden=" true"></span></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="input-group">
+                <hr />
+                <a href="#/" type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">Back</span>
+                </a>
+
+                <button ng-click="edit.saveMovie(edit.Movie)" type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true">Update Movie</span>
+
+                </button>
+                <button ng-click="edit.deleteMovie(edit.Movie)" type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true">Delete Movie</span>
+
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

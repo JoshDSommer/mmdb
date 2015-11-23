@@ -1,0 +1,35 @@
+﻿
+<span class="warning">Required *</span>
+<label for="Title">Movie Title</label>
+<div class="input-group">
+    <input ng-model="Movie.Title" ng-minlength="3" type="text" id="Title" name="Title" class="form-control" required />
+    <span class="warning" ng-show="Title.$dirty  && Title.$invalid">*</span>
+</div>
+<label for="Date">Release Date</label>
+<div class="input-group">
+    <input ng-model="Movie.ReleaseDate" type="text" name="Date" ng-minlength="4" id="Date" class="form-control" required />
+    <span class="warning" ng-show="Date.$dirty  && Date.$invalid">*</span>
+</div>
+<label for="Genre">Genre</label>
+<div class="input-group">
+    <input ng-model="Movie.Genre" type="text" id="Genre" name="Genre" class="form-control" required />
+    <span class="warning" ng-show="Genre.$dirty  && Genre.$invalid">*</span>
+</div>
+<label for="Rating">Rating</label>
+<div class="input-group">
+    <select id="movie-rating" ng-model="Movie.Rating" class="form-control">
+        <option selected>G</option>
+        <option>PG</option>
+        <option>PG-13</option>
+        <option>R</option>
+    </select>
+</div>
+<label for="Description">Description</label>
+<textarea ng-model="Movie.Description" id="Description" name="Description" class="form-control" required />
+<span class="warning" ng-show="Description.$dirty  && Description.$invalid">*</span>
+<label for="Poster">Movie Poster URL</label>
+<div class="input-group">
+    <span class="input-group-addon" id="basic-addon3">http://url.com/poster.jpg</span>
+    <input type="text" ng-model="Movie.Poster" id="Poster" name="Poster" class="form-control" required />
+    <span class="warning" ng-show="Poster.$dirty  && Poster.$invalid">*</span>
+</div>

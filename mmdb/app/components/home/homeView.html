@@ -1,0 +1,12 @@
+﻿<section ng-controller="HomeController as home">
+    <h1>Movies</h1>
+    <div class="row">
+        <input type="text" ng-model="search" class="form-control" placeholder="Search by Title, Genre, or Actor" />
+        <hr />
+    </div>
+    <div class="row">
+        <a class=" col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat=" movie in home.movies | filter:search" href="#/movie/{{movie.MovieId}}">
+            <movie-card ng-model="movie"></movie-card>
+        </a>
+    </div>
+</section>

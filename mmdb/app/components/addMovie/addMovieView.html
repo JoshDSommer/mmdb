@@ -1,0 +1,26 @@
+﻿<form name="movieForm" ng-controller="AddMovieController as addMovie" novalidate>
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Add a New Movie</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <movie-form ng-model="newMovie"></movie-form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <div class="input-group">
+                <hr />
+                <a href="#/" type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">Back</span>
+                </a>
+                <button ng-click="addMovie.addMovie(newMovie)" ng-disabled="movieForm.$invalid" type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"> &nbsp;Add Movie</span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,18 @@
+﻿<section ng-controller="StatsController as Stats">
+    <h2>Stats</h2>
+    <p>Top 3 Actors</p>
+    <ol>
+        <li ng-repeat="actor in Stats.top3Actors"><strong>{{actor.Name}}</strong> Total Movies <strong>{{actor.count}}</strong></li>
+    </ol>
+    <p>Top 3 Genres</p>
+    <ol>
+        <li ng-repeat="genre in Stats.top3Genres"><strong>{{genre.Genre}}</strong> Total Movies <strong>{{genre.Count}}</strong></li>
+    </ol>
+
+    <p>All Actors in: <select id="genre-select" ng-change="Stats.ActorsByGenre(Stats.selectedGenre)" ng-model="Stats.selectedGenre">
+        <option ng-repeat="genre in Stats.Genres">{{genre.Genre}}</option>
+    </select></p>
+    <ul>
+        <li ng-repeat="actor in Stats.Actors"><strong>{{actor.Name}}</strong></li>
+    </ul>
+</section>
